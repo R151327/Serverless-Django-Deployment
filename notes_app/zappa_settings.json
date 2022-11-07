@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "aws_region": "us-west-2",
+        "django_settings": "notes_app.settings",
+        "profile_name": "default",
+        "project_name": "notes-app",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-il3sox17p"
+    }
+}

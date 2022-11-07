@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import pymysql
+pymysql.install_as_MySQLdb()
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure--7(a4^_$rr3tx8scu^$zv(=0(k=wifrr49$eb9e^_91a_%2af5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,11 +85,14 @@ WSGI_APPLICATION = 'notes_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'notes_database'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'django_db',
+        'USER':'admin',
+        'PASSWORD':'Vardhan123',
+        'HOST':'vishnudb.c0mmzskgw8sh.us-west-2.rds.amazonaws.com',
+        'PORT':3306
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
